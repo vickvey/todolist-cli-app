@@ -1,8 +1,7 @@
 # defining welcome
-def welcome():
+def welcome(z):
     wlcm_msg="Welcome to your To-do list."
     x=(len(wlcm_msg))
-    z=80
     y=int((z-x)/2)
 
     print("*"*z,end='')  
@@ -10,7 +9,7 @@ def welcome():
     print("*"*z)
 
 #calling welcome
-welcome()
+welcome(80)
     
 
 
