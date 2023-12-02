@@ -1,6 +1,6 @@
 # defining welcome
 def welcome(z):
-    wlcm_msg="Welcome to your To-do list."
+    wlcm_msg="Welcome to your To-do list"
     x=(len(wlcm_msg))
     y=int((z-x)/2)
 
