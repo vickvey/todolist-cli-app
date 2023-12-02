@@ -1,16 +1,16 @@
 # defining welcome
 def welcome():
-    print("*"*50,end='\n\n')
     wlcm_msg="Welcome to your To-do list."
-    x=int(len(wlcm_msg))
-    y=20-x/2
-    print(" "*y,wlcm_msg," "*y,sep='')
-    print("\n\n")
-    print("*"*50,end='\n\n')
+    x=(len(wlcm_msg))
+    z=80
+    y=int((z-x)/2)
 
-# defining main function
-def main():
-    welcome()
+    print("*"*z,end='')  
+    print("\n"*2," "*y ,wlcm_msg, " "*y, "\n"*2 , sep= '', end= '')
+    print("*"*z)
 
-# calling main
-main()
+#calling welcome
+welcome()
+    
+
+
