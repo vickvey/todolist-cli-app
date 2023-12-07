@@ -1,13 +1,30 @@
 # lets make task structure
-def linebreak() :
-    print('\n\n')
+class Task:
+    def __init__(self, task_id=None, task_name=None, task_desc=None, task_status=False):
+        if task_id is None:
+            task_id = self.get_next_task_id()
 
-class Task :
-    def __init__ (self, task_name, task_desc, task_status = False) :
-        self.task_id = self.get_next_task_id()
+        self.task_id = task_id
         self.task_name = task_name
         self.task_desc = task_desc
-        self.task_status = task_status
+        self.task_status = bool(task_status)
+
+    def update_status(self, new_status):
+        self.task_status = new_status
+
+    def display_task_details(self):
+        print(f'Task ID: {self.task_id}')
+        print(f'Task Name: {self.task_name}')
+        print(f'Task Description: {self.task_desc}')
+        print(f'Task Status: {"Done" if self.task_status else "Not Done"}',end='\n\n')
+
+    def to_dict(self):
+        return {
+            'Task ID': self.task_id,
+            'Task Name': self.task_name,
+            'Task Description': self.task_desc,
+            'Task Status': 'Done' if self.task_status else 'Not Done'
+        }
 
     def get_next_task_id(self):
         try:
@@ -23,31 +40,7 @@ class Task :
 
         return task_id
 
-    def update_status(self, new_status) : 
-        self.task_status = new_status
-    
-
-    def display_task_details(self):
-        print(f'Task ID: {self.task_id}')
-        print(f'Task Name: {self.task_name}')
-        print(f'Task Description: {self.task_desc}')
-        print(f'Task Status: {"Done" if self.task_status else "Not Done"}')
-
-# initialised three Task objects
-task1 = Task('Brush your teeth', 'Brush karle bhai')
-task2 = Task('Take a bath', 'Nahane jaa nahane')
-task3 = Task('Get Dressed', 'Kapde pehen bhai achhe se')
-
-
-print(task1.task_id)
-task1.display_task_details()
-linebreak()
-
-print(task2.task_id)
-task2.display_task_details()
-linebreak()
-
-print(task3.task_id)
-task3.display_task_details()
-linebreak()
-
+'''
+# Example of creating a Task instance
+task = Task(task_name='Brush your teeth', task_desc='No desc', task_status=False)
+task.display_task_details()'''

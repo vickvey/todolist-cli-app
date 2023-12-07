@@ -9,7 +9,7 @@ def welcome(z):
     print("*"*z)
 
 #calling welcome
-welcome(80)
+# welcome(80)
     
 
 
